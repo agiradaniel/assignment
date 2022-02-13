@@ -50,14 +50,7 @@
     }
     @keyframes branding {
         0%   {top:54%;}
-        
-        
-
         100% {top:34%;}
-
-        150% {top:14%;}
-
-        
     }
      
     .wifiicon{
@@ -238,8 +231,14 @@ position:relative;
         grid-template-areas:
         "one"
         "two"
-        "three"
+        "three";
+        animation-duration: 4200ms;
+        animation-name: branding;
   
+    }
+    @keyframes branding {
+        0%   {top:50%;}
+        100% {top:32%;}
     }
     .wifiicon{
         grid-area: wifiicon;
@@ -430,8 +429,14 @@ position:relative;
         grid-template-areas:
         "one"
         "two"
-        "three"
+        "three";
+        animation-duration: 4200ms;
+        animation-name: branding;
   
+    }
+    @keyframes branding {
+        0%   {top:50%;}
+        100% {top:23%;}
     }
     .wifiicon{
         grid-area: wifiicon;
