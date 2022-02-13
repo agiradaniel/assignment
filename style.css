@@ -237,7 +237,7 @@ position:relative;
   
     }
     @keyframes branding {
-        0%   {top:50%;}
+        0%   {top:39%;}
         100% {top:32%;}
     }
     .wifiicon{
@@ -435,7 +435,7 @@ position:relative;
   
     }
     @keyframes branding {
-        0%   {top:50%;}
+        0%   {top:27%;}
         100% {top:23%;}
     }
     .wifiicon{
