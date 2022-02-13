@@ -42,9 +42,24 @@
         grid-template-areas:
         "one"
         "two"
-        "three"
+        "three";
+
+        animation-duration: 4200ms;
+        animation-name: branding;
   
     }
+    @keyframes branding {
+        0%   {top:54%;}
+        
+        
+
+        100% {top:34%;}
+
+        150% {top:14%;}
+
+        
+    }
+     
     .wifiicon{
         grid-area: wifiicon;
         
@@ -142,6 +157,9 @@
         text-align: center;
         margin: auto;
     }
+
+
+
     @keyframes package {
 0% { transform: rotateY( 180deg); }
 100% { transform: rotateY( 0deg); }
