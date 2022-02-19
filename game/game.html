@@ -1,0 +1,242 @@
+<html>
+<head>
+    <style>
+         body{
+        margin: 0px;
+}
+        .gamearea{
+            width:1000px;
+            height: 700px;
+            border: solid;
+            background-image: url("grass.jpeg");
+            
+        }
+        .ant1{
+            width:45px;
+            height: 40px;
+            /*background-color:black;
+            border:solid;*/
+            position: relative;
+            top:350px;
+            left:300px
+        }
+        .ant2{
+            width:45px;
+            height: 40px;
+            /*background-color:red;
+            border:solid;*/
+            position: relative;
+            top:310px;
+            left:600px
+        }
+        .topleg{
+            /*animation-duration: 2200ms;
+            animation-name: topleg;*/
+            animation:topleg 400ms 1
+        }
+        @keyframes topleg {
+        0%   {transform: rotate(-30deg);}
+        100% {transform: rotate(-10deg);}
+        }
+        .bottomleg{
+            /*animation-duration: 2200ms;
+            animation-name: bottomleg;*/
+            animation:bottomleg 400ms 1
+        }
+        @keyframes bottomleg {
+        0%   {transform: rotate(30deg);}
+        100% {transform: rotate(10deg);}
+        }
+    </style>   
+   
+    <script src="jquery.min.js"></script>
+    <script src="jquery-ui/jquery-ui.js"></script>
+    <script href="jquery-ui/jquery-ui.css" rel="stylesheet"></script>
+    <script src="jquerycollision/jquery-collision.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+  
+</head> 
+
+<body>
+
+    <div class="gamearea">
+        <label for="file" style="font-size: 25px;color: white;">Ant 1:</label>
+        <progress id="file" value="32" max="100" style="height: 25px"> 32% </progress>
+
+        <label for="file" style="font-size: 25px;color: white;">Ant 2:</label>
+        <progress id="file" value="32" max="100" style="height: 25px"> 32% </progress>
+
+        <div id="div1" class="ant1 div1">
+            <div style="width:30px; height:25px; background-color:black"></div>
+            <div style="width:15px; height:12px; background-color:black;position: relative;left:30px;top:-18px"></div>
+
+            <div class="topleg1" style="width:4px; height:15px; background-color:black; position: relative;left:21px;top:-51px; transform: rotate(-10deg);"></div>
+            <div class="topleg1" style="width:4px; height:15px; background-color:black; position: relative;left:5px;top:-66px; transform: rotate(-10deg);"></div>
+            <div class="bottomleg1" style="width:4px; height:15px; background-color:black; position: relative;left:21px;top:-43px;transform: rotate(10deg);"></div>
+            <div class="bottomleg1" style="width:4px; height:15px; background-color:black; position: relative;left:5px;top:-58px;transform: rotate(10deg);"></div>
+        </div>
+        <div class="ant2 div2" id="div2">
+            <div style="width:30px; height:25px; background-color:red"></div>
+            <div style="width:15px; height:12px; background-color:red;position: relative;left:-15px;top:-18px"></div>
+
+            <div class="bottomleg2" style="width:4px; height:15px; background-color:red; position: relative;left:21px;top:-51px; transform: rotate(10deg);"></div>
+            <div class="bottomleg2" style="width:4px; height:15px; background-color:red; position: relative;left:5px;top:-66px; transform: rotate(10deg);"></div>
+            <div class="topleg2" style="width:4px; height:15px; background-color:red; position: relative;left:21px;top:-43px; transform: rotate(-10deg);"></div>
+            <div class="topleg2" style="width:4px; height:15px; background-color:red; position: relative;left:5px;top:-58px; transform: rotate(-10deg);"></div>
+        </div>
+    </div>  
+    
+    <script>
+    $(document).keydown(function(e){
+    switch (e.which){
+    case 37:    // key left, right, up, and down
+        $(".ant2").finish().animate({
+            left: "-=10"
+        });
+        setInterval(function () {
+         $(".topleg2").addClass("topleg");
+         $(".bottomleg2").addClass("bottomleg") 
+        }, 100);    
+        $(".topleg2").removeClass("topleg");
+         $(".bottomleg2").removeClass("bottomleg")
+        break;
+    case 38:    // key up
+        $(".ant2").finish().animate({
+            top: "-=10"
+        });
+        setInterval(function () {
+         $(".topleg2").addClass("topleg");
+         $(".bottomleg2").addClass("bottomleg") 
+        }, 100);    
+        $(".topleg2").removeClass("topleg");
+         $(".bottomleg2").removeClass("bottomleg")
+        break;
+    case 39:    // key right
+        $(".ant2").finish().animate({
+            left: "+=10"
+        });
+        setInterval(function () {
+         $(".topleg2").addClass("topleg");
+         $(".bottomleg2").addClass("bottomleg") 
+        }, 100);    
+        $(".topleg2").removeClass("topleg");
+         $(".bottomleg2").removeClass("bottomleg")
+        break;
+    case 40:    // key down
+        $(".ant2").finish().animate({
+            top: "+=10"
+        });
+        setInterval(function () {
+         $(".topleg2").addClass("topleg");
+         $(".bottomleg2").addClass("bottomleg") 
+        }, 100);    
+        $(".topleg2").removeClass("topleg");
+         $(".bottomleg2").removeClass("bottomleg")
+        break;
+        case 37:    // key left, right, up, and down
+        $(".ant2").finish().animate({
+            left: "-=10"
+        });
+        break;
+
+       
+
+
+    case 65:    // key left, right, up, and down
+        $(".ant1").finish().animate({
+            left: "-=10"
+        });
+
+        setInterval(function () {
+         $(".topleg1").addClass("topleg");
+         $(".bottomleg1").addClass("bottomleg") 
+        }, 100);    
+        $(".topleg1").removeClass("topleg");
+         $(".bottomleg1").removeClass("bottomleg")
+
+        break;    
+    case 87:    // key up
+        $(".ant1").finish().animate({
+            top: "-=10"
+        });
+        setInterval(function () {
+         $(".topleg1").addClass("topleg");
+         $(".bottomleg1").addClass("bottomleg") 
+        }, 100);    
+        $(".topleg1").removeClass("topleg");
+         $(".bottomleg1").removeClass("bottomleg")
+
+        break;
+    case 68:    // key right
+        $(".ant1").finish().animate({
+            left: "+=10"
+        });
+        setInterval(function () {
+         $(".topleg1").addClass("topleg");
+         $(".bottomleg1").addClass("bottomleg") 
+        }, 100);    
+        $(".topleg1").removeClass("topleg");
+         $(".bottomleg1").removeClass("bottomleg")
+        break;
+    case 83:    // key down
+        $(".ant1").finish().animate({
+            top: "+=10"
+        });
+        setInterval(function () {
+         $(".topleg1").addClass("topleg");
+         $(".bottomleg1").addClass("bottomleg") 
+        }, 100);    
+        $(".topleg1").removeClass("topleg");
+         $(".bottomleg1").removeClass("bottomleg")
+        break;    
+    }
+});
+
+
+  $( "#div1" ).draggable({ axis: "x,y"});  
+  $( "#div2" ).draggable({ axis: "x,y"});  
+
+  $("#div1").draggable( { obstacle: ".div2" } );
+
+  $("#div1").draggable( { obstacle: ".div2", preventCollision: true } );
+
+  /*function collision($div1, $div2) {
+      var x1 = $div1.offset().left;
+      var y1 = $div1.offset().top;
+      var h1 = $div1.outerHeight(true);
+      var w1 = $div1.outerWidth(true);
+      var b1 = y1 + h1;
+      var r1 = x1 + w1;
+      var x2 = $div2.offset().left;
+      var y2 = $div2.offset().top;
+      var h2 = $div2.outerHeight(true);
+      var w2 = $div2.outerWidth(true);
+      var b2 = y2 + h2;
+      var r2 = x2 + w2;
+
+      if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2) return false;
+      return true;
+    };
+
+  collision(); */
+  function collision($div1, $div2) {
+    var x1 = $div1.offset().left;
+    var y1 = $div1.offset().top;
+    var x2 = $div2.offset().left;
+    var y2 = $div2.offset().top;
+    if ((y1 + $div1.outerHeight(true)) < y2 ||
+        y1 > (y2 + $div2.outerHeight(true)) ||
+        (x1 + $div1.outerWidth(true)) < x2  ||
+        x1 > (x2 + $div2.outerWidth(true)))
+        alert('false');
+    alert ('true');
+}
+collision();
+  
+    </script>
+</body>
+
+</html>    
